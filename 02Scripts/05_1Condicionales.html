@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+
+        <div>
+			<p id="demo"></p>
+		</div>
+       <script>
+           switch (new Date().getDay()) {
+                case 0:
+                    day = "Domingo";
+                    break;
+                case 1:
+                    day = "Lunes";
+                    break;
+                case 2:
+                    day = "Martes";
+                    break;
+                case 3:
+                    day = "Miercoles";
+                    break;
+                case 4:
+                    day = "Jueves";
+                    break;
+                case 5:
+                    day = "Viernes";
+                    break;
+                case 6:
+                    day = "Sabado";
+                    break;
+                default:
+                    day: "ND";
+            }
+            document.getElementById("demo").innerHTML = "Hoy es " + day;
+       </script>
+    </body>
+</html>

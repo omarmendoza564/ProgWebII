@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Encontrando Objetos por Nombre de Etiqueta</title>
+    </head>
+    <body>
+        <h2>Cursos de Tecnolog&iacute;as y Sistemas de Informaci&oacute;n</h2> 
+        <p>Programaci&oacute;n de Web Din&aacute;mico</p> 
+        <p>Bases de Datos</p>
+        <p>Integraci&oacute;n de Sistemas</p>
+        <h2>Cursos encontrados Manual</h2>
+        <div id="texto"></div>
+        <h2>Cursos encontrados Todos</h2>
+        <div id="demo"></div>
+        <script type="text/javascript">
+        parrafos = document.getElementsByTagName("p"); 
+        console.log(parrafos.length);
+        console.log(parrafos);
+        miTexto = document.getElementById("texto");
+        miTexto.innerHTML = "Los 2 primeros cursos son:" + "<br />" + parrafos[0].innerHTML + "<br />" + parrafos[1].innerHTML;
+        
+        miTexto = document.getElementById("demo");
+        for(i = 0; i < parrafos.length; i++){
+            miTexto.innerHTML += parrafos[i].innerHTML + "<br />";
+        }
+
+        
+        </script>
+    </body>
+</html>

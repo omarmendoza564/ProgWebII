@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>Cambiar atributos</h2>
+		<p>JavaScript puede cambiar los valores de los atributos HTML</p>
+		<p>En este ejemplo, JavaScript cambia el valor del atributo src de una etiqueta img:</p>
+		<button onclick="document.getElementById('myImage').src='foco_on.png'">Prende el foco</button>
+		<img id="myImage" src="foco_off.png" style="width:100px">
+		<button onclick="document.getElementById('myImage').src='foco_off.png'">Apaga el foco</button>
+
+		<h2>Cambiar estilos HTML </h2>
+		<p id="demo">JavaScript cambiar estilos HTML </p>
+
+		<button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">Cambiar Estilo!</button>
+		<br>
+		<button type="button" onclick="document.getElementById('demo').style.display='none'">Esconder!</button>
+		<br>
+		<button type="button" onclick="document.getElementById('demo').style.display='block'">Mostrar!</button>
+
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+    <head>
+		<title>HTML</title> 
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	</head>
+	<body>
+		<p >Los segundo actuales son: </p>
+		<p id="segundos"> </p>
+		<div>
+			<input type="texto" id="miNombre" name="" placeholder="Escribe tu nombre">
+			<input type="texto" id="miEdad" name="" placeholder="Cuantos a&ntilde;os tienes???">
+			<button onclick="segundos()" class="btn btn-primary">Ver segundo actual</button>
+		</div>
+		<script type="text/javascript">
+			document.write("<h1>Encabezado con JS</h1>");
+			document.write("<h2>Encabezado h2</h2>");
+			document.write("<h3>Encabezado h3</h3>");
+			document.write("<a href='https://www.google.com/'>Google</a>");
+			document.write("<h4>URL: "+ document.URL +"</h4>");
+			var f = new Date();
+			document.write("<h5> Fecha" + f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear() + "</h5>");
+			document.write("<h5> Hora " + (f.getHours() +1) + ":" + f.getMinutes() + ":" + f.getSeconds() + "</h5>");
+			
+			function segundos(){
+				var f1 = new Date();
+				var edad = parseInt(document.getElementById("miEdad").value);
+				var meses = edad * 12;
+				document.getElementById("segundos").innerHTML = document.getElementById("miNombre").value + " segundos: " + f1.getSeconds() + " Haz vivido " + meses + " Meses";
+				console.log(document.getElementById("miNombre").value + " segundos: " + f1.getSeconds() + " Haz vivido " + meses + " Meses");
+			}
+
+		</script>
+	</body>
+</html>
