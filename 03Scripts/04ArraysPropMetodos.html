@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <h1>Array</h1>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+    <p id="demo11"></p>
+    <p id="demo12"></p>
+    <p id="demo13"></p>
+    <script>
+        var frase = "Hay veces que no tengo ganas de verte Hay veces que no quiero ni tocarte";
+        var arrPalabras = frase.split(" ");
+        for(i = 0; i < arrPalabras.length; i++){
+            document.getElementById("demo").innerHTML += arrPalabras[i] + "<br>";
+        }
+
+        document.getElementById("demo1").innerHTML = arrPalabras.toString();
+        
+        //push agrega elementos al final del array
+        arrPalabras.push("Celula");
+        arrPalabras.push("Explota");
+        document.getElementById("demo2").innerHTML = arrPalabras;
+
+        //unshift agrega elementos al inicio del array
+        arrPalabras.unshift("Olvidarme");
+        arrPalabras.unshift("Imagen");
+        document.getElementById("demo3").innerHTML = arrPalabras;
+
+        //pop elimina el ultimo elemento del array
+        arrPalabras.pop();
+        document.getElementById("demo4").innerHTML = arrPalabras;
+
+        //shift elimina el primer elemento del array
+        arrPalabras.shift();
+        document.getElementById("demo5").innerHTML = arrPalabras;
+
+        //sort ordena los elementos de una lista
+        document.getElementById("demo6").innerHTML = arrPalabras.sort();
+
+        //reverse invierte los elementos de la lista
+        document.getElementById("demo7").innerHTML = arrPalabras.reverse();
+
+        // slice obtiene un numero de elementos del arreglo
+        console.log(arrPalabras);
+        var arr = arrPalabras.slice(3,7);
+        document.getElementById("demo7").innerHTML = arr;
+
+        //splice inserta elementos en ele arreglo en una posicion específica y elimina algunos elementos
+        var frutas = ["Naranja", "Manzana", "Fresa", "Papaya", "Piña"];
+        document.getElementById("demo8").innerHTML = frutas;
+        frutas.splice(2,0,"Sandia", "Guayaba", "Caña");
+        document.getElementById("demo9").innerHTML = frutas;
+
+        document.getElementById("demo10").innerHTML = frutas.join("<br>");
+
+        //concat concatena dos o mas arrays
+        var arr3 = frutas.concat(arrPalabras);
+        document.getElementById("demo11").innerHTML = arr3.join("<br>");
+
+        //map recorre todos los elementos y elecuta una accion
+        var numeros = [45,6,9,4,333,90,900];
+        document.getElementById("demo12").innerHTML = numeros.map(Math.sqrt);
+
+        document.getElementById("demo13").innerHTML = frutas.map(fruta => fruta.toUpperCase());
+
+
+
+
+    </script>
+</body>
+</html>

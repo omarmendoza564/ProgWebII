@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+<body>
+    <h1>Condicionales</h1>
+    <p id="demo"></p>
+    <script>
+        var acceso = false, edad = 12;
+
+        acceso = edad >= 18 ? true : false;
+
+        console.log(acceso);
+
+
+        var segundos = new Date().getSeconds();
+        console.log(segundos);
+
+        var msg;
+        if(segundos <= 30){
+            msg = "Primer mitad del minuto";
+        }
+        console.log(msg);
+
+        var msg;
+        if(segundos <= 30){
+            msg = "Primer mitad del minuto";
+        }else{
+            msg = "Segunda mitad del minuto";
+        }
+        console.log(msg);
+
+        var msg;
+        if(segundos <= 20){
+            msg = "Primer tercio del minuto";
+        }else if((segundos > 20) && (segundos <= 40) ){
+            msg = "Segundo tercio del minuto";
+        }else{
+            msg = "Tercer tercio del minuto";
+        }
+        console.log(msg);
+
+        document.getElementById('demo').innerHTML = segundos + ", " + msg;
+
+        switch(new Date().getDay()){
+            case 0:
+                dia = "Domingo";
+                break;
+            case 6:
+                dia = "Sabado";
+                break;
+            default:
+                dia = "Entre semana";
+        }
+        document.getElementById('demo').innerHTML = segundos + ", " + msg + " " + dia;
+    </script>
+</body>
+</html>

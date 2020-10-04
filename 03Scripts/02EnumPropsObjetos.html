@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>Objetos</h1>
+        <p id="demo"></p>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <script>
+            var myCar = new Object();
+            console.log(myCar);
+            myCar.marca = "Ford";
+            myCar.modelo = 'Mustang';
+            myCar.anio = "1969";
+            myCar.color; 
+            
+            var myCar4 = { marca:'Mazda', modelo:'XC6', anio:'2020', 
+            motor:{cilindros: 4, size: 2.2} } ;
+            
+            //for .. in
+            for(const prop in myCar4){
+                console.log(`${prop} = ${myCar4[prop]}`);
+                document.getElementById("demo1").innerHTML += `${prop} = ${myCar4[prop]} <br>`;
+            }
+
+            console.log(Object.keys(myCar4));
+            document.getElementById("demo2").innerHTML = Object.keys(myCar4);
+
+            console.log(Object.getOwnPropertyNames(myCar4));
+            document.getElementById("demo3").innerHTML = Object.getOwnPropertyNames(myCar4);
+
+            //console.log(showProps(myCar, "myCar"));
+            //console.log()
+
+            var myObj = new Object(), 
+                str = "cadena",
+                rand = Math.random(),
+                obj = new Object();
+
+            myObj.type      = 'Sintaxis de puntos';
+            myObj["fecha"]  = new Date();
+            myObj[str]      = "Valor de una cadena";
+            myObj[rand]     = Math.random();
+            myObj[obj]      = 'Objeto';
+            myObj['']       = 'Cadena vacia';
+
+            console.log(Object.keys(myObj));
+            
+
+            var persona = {
+                Nombre: "Juan",
+                Apellidos: "Lopez Diaz",
+                id : 5555,
+                NombreCompleto : function(){
+                    return this.Nombre + " " + this.Apellidos;
+                }
+            };
+
+            console.log(persona);
+            document.getElementById("demo3").innerHTML = persona.NombreCompleto();
+
+
+            console.log(showProps(myCar4, "myCar4"));
+            console.log(showProps(myObj, "myObj"));
+            console.log(showProps(persona, "persona"));
+
+            console.log(showAllProps(myCar4));
+            console.log(showAllProps(myObj));
+            console.log(showAllProps(persona));
+
+            function showProps(obj, objName){
+                var r = ``;
+                for(var p in obj){
+                    if(obj.hasOwnProperty(p)){
+                        r += `${objName}.${p} = ${obj[p]}\n`;
+                    }
+                }
+                return r;
+            }
+
+            function showAllProps(obj){
+                var objI
+                var r = [];
+                for(objI = obj; objI !== null; objI = Object.getPrototypeOf(objI)){
+                    r = r.concat(Object.getOwnPropertyNames(objI));
+                }
+                return r;
+            }
+
+
+        </script>
+    </body>
+</html>

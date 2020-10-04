@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otros Objetos</title>
+</head>
+<body>
+    <h2>Anclas</h2>
+    <a name="html">HTML</a>
+    <a name="CSS">CSS</a>
+    <a name="JavaScript">JavaScript</a>
+    
+    <h2>Enbed</h2>
+    <embed type="video/webm" 
+    src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_30MB.mp4"
+    width="400" height="300">
+
+    <h2>form</h2>
+    <form id="form1" action="#">
+        Nombre: <input type="text" name="nombre"><br>
+        Apellido Paterno <input type="text" name="ap_paterno"><br>
+        Apellido Materno <input type="text" name="ap_materno"><br>
+        <input type="button" value="Enviar" onclick="">
+    </form>
+
+    <h2>ligas</h2>
+    <a href="https://itsrv.edu.mx/">ITSRV</a>
+    <a href="https://www.aragon.unam.mx/">FES Aragon</a>
+    <a href="https://www.unam.mx/">UNAM</a>
+
+    <input type="button" value="Ver elementos de la pagina" onclick="myFunction()">
+    <p id="demo"></p>
+    <script>
+        function myFunction(){
+            console.log(document.anchors);
+            console.log(document.embeds);
+            console.log(document.forms);
+            console.log(document.links);
+            document.getElementById("demo").innerHTML = 
+            "<br>Numero de anclas " + document.anchors.length +
+            "<br>Numero de enbed " + document.embeds.length +
+            "<br>Numero de forms " + document.forms.length +
+            "<br>Numero de Link " + document.links.length +
+            "<br> El Url es " + document.documentURI ;
+
+            console.log(document.head);
+            console.log(document.head.innerHTML);
+            console.log(document.body.innerHTML);
+            console.log(document.documentElement);
+            console.log(document.documentElement.innerHTML);
+        }
+    </script>
+</body>
+</html>

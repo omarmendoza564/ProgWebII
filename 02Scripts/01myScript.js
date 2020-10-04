@@ -1,3 +1,3 @@
-function myFunction(id, texto) {
-	document.getElementById(id).innerHTML = texto;
+function apagarPrenderFoco(id, imagen){
+    document.getElementById(id).src=imagen;
 }

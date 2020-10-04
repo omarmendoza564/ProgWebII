@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <h1>Array</h1>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+    <p id="demo11"></p>
+    <p id="demo12"></p>
+    <p id="demo13"></p>
+    <script>
+        var personas = [
+            {nombre:"Blanca", apellidos:"Gonzalez", materia:"PWII"},
+            {nombre:"Emmanuel", apellidos:"Villa", materia:"PWII"}, 
+            {nombre:"Luis", apellidos:"Escamilla", materia:"PWII"}
+        ];
+        console.log(personas);
+
+        for(i = 0; i < personas.length; i++){
+            document.getElementById("demo1").innerHTML += "Nombre: " + personas[i].nombre 
+            + " Apellido: " + personas[i].apellidos + "<br>";
+        }
+
+        document.getElementById("demo2").innerHTML = personas.map(nombreCompleto);
+        
+        function nombreCompleto(item){
+            var nc = [item.nombre, item.apellidos].join(" ");
+            return nc;
+        }
+
+    </script>
+</body>
+</html>
