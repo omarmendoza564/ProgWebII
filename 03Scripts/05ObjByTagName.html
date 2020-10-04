@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <h1>Cursos de TICs</h1>
+    <p id="demo" class="programacion">Prog Web</p>
+    <p id="demo1" class="programacion">Prog Web II</p>
+    <p id="demo2" class="programacion">Angular</p>
+    <p id="demo3" class="programacion">React</p>
+    <p id="demo4" class="html">CSS y HTML</p>
+    <p id="demo5" class="programacion">PHP y MySQL</p>
+    <p id="demo6" class="bd">Base de datos</p>
+    <p id="demo7" class="so">Sistemas operativos</p>
+    <p id="demo8" class="programacion">Desarrollo de App</p>
+    <p id="demo9" class="programacion">Estructura de datos</p>
+    <p id="demo10" class="cd">Ciencia de datos</p>
+
+    <span id="titulos"></span>
+    <span id="cursos"></span>
+    <span id="programacion"></span>
+    <script>
+        var titulos  = document.getElementsByTagName("h1");
+        var cursos = document.getElementsByTagName("p");
+
+        document.getElementById("cursos").innerHTML = "Existen " + cursos.length + " cursos <br>"
+        for(i = 0; i < cursos.length; i++){
+            document.getElementById("cursos").innerHTML += cursos[i].innerHTML + "<br>";
+        }
+
+        var cursosProgramacion = document.getElementsByClassName("programacion");
+        
+        console.log(cursosProgramacion);
+
+        document.getElementById("programacion").innerHTML = "<h2>Existen " + cursosProgramacion.length 
+        + " cursos de Programación<h2><br>"
+        for(i = 0; i < cursosProgramacion.length; i++){
+            document.getElementById("programacion").innerHTML += cursosProgramacion[i].innerHTML + "<br>";
+        }
+
+
+    </script>
+</body>
+</html>

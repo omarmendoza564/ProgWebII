@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <h1>Array</h1>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <script>
+        var arr = []; // Array
+        var obj = {} // Object
+
+        console.log(arr);
+        console.log(obj);
+
+        console.log(arr.length);
+
+        var cars = ["Saab", "Volvo", "Mercedes", "BMW"];
+
+        document.getElementById("demo").innerHTML = cars[2];
+        
+        for(i = 0; i < cars.length; i++){
+            document.getElementById("demo1").innerHTML += cars[i] + "<br>";
+        }
+
+        for(i = cars.length - 1; i >= 0; i--){
+            document.getElementById("demo3").innerHTML += cars[i] + "<br>";
+        }
+
+        cars.forEach(myFunction);
+
+        function myFunction(item, index){
+            document.getElementById("demo2").innerHTML += index + ":" + item +  "<br>";
+        }
+
+        var  myArray = [];
+        myArray[0] = Date.now;
+        myArray[1] = centigrados;
+        myArray[2] = cars;
+
+        console.log(myArray);
+        console.log(myArray.toString());
+        document.getElementById("demo4").innerHTML = myArray.toString();
+
+        console.log(myArray[0]);
+        console.log(myArray[1](400));
+        console.log(myArray[2][1]);
+
+        document.getElementById("demo5").innerHTML = "400 grados F son igual a " + myArray[1](400) 
+        + " grados C";
+
+
+        function centigrados(f){
+            return (5/9) * (f-32);
+        }
+
+
+        var frase = "Hay veces que no tengo ganas de verte Hay veces que no quiero ni tocarte";
+        var arrPalabras = frase.split(" ");
+        document.getElementById("demo6").innerHTML = "La Frase: " + frase + "<br>" + "tiene " +
+        arrPalabras.length + " palabras y son: <br>";
+        for(i = 0; i < arrPalabras.length; i++){
+            document.getElementById("demo6").innerHTML += arrPalabras[i] + "<br>";
+        }
+
+
+    </script>
+</body>
+</html>

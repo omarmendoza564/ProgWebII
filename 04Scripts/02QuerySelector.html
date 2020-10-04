@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos por Query Selector</title>
+</head>
+<body>
+    <p>Hola Mundo</p>
+    <p class="intro">Ejemplos de DOM</p>
+    <p class="intro">Uso de Query Selector</p>
+    <p class="ejemplo">Este Parrafor no es clase intro</p>
+    <p class="intro">Elemetos varios</p>
+    <span class="intro">Otro ejemplo de Texto</span>
+    <p id="demo"></p>
+    <script>
+        var x = document.querySelectorAll("p.intro");
+        console.log(x);
+        for(i = 0; i < x.length; i++){
+            document.getElementById("demo").innerHTML += `Parrafo ${i}: ` + x[i].innerHTML + "<br>";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>Objetos</h1>
+        <p id="demo"></p>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <script>
+            var myCar = new Object();
+            console.log(myCar);
+            myCar.marca = "Ford";
+            myCar.modelo = 'Mustang';
+            myCar.anio = "1969";
+            myCar.colo; 
+            console.log(myCar);
+            document.getElementById("demo").innerHTML = myCar.modelo;
+
+            myCar2 = { marca:'Mazda', modelo:'XC5', anio:'2019' };
+            console.log(myCar2);
+
+            var myCar3 = new Object();
+            myCar3['marca'] = 'Renault'; myCar3['modelo'] = 'Duster'; myCar3['anio'] = 2015;
+            console.log(myCar3);
+
+            var myCar4 = { marca:'Mazda', modelo:'XC6', anio:'2020', 
+            motor:{cilindros: 4, size: 2.2} } ;
+            console.log(myCar4);
+            document.getElementById("demo1").innerHTML = myCar4.motor.cilindros;
+
+            document.getElementById("demo2").innerHTML = myCar.toString();
+
+            var myObj = new Object(), 
+                str = "cadena",
+                rand = Math.random(),
+                obj = new Object();
+
+            myObj.type      = 'Sintaxis de puntos';
+            myObj["fecha"]  = new Date();
+            myObj[str]      = "Valor de una cadena";
+            myObj[rand]     = Math.random();
+            myObj[obj]      = 'Objeto';
+            myObj['']       = 'Cadena vacia';
+
+            console.log(myObj);
+            console.log(myObj.type);
+            console.log(myObj['']);
+
+            var persona = {
+                Nombre: "Juan",
+                Apellidos: "Lopez Diaz",
+                id : 5555,
+                NombreCompleto : function(){
+                    return this.Nombre + " " + this.Apellidos;
+                }
+            };
+
+            console.log(persona);
+            document.getElementById("demo3").innerHTML = persona.NombreCompleto();
+
+
+        </script>
+    </body>
+</html>

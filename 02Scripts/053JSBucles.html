@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+<body>
+    <h1>Operador Ternario</h1>
+    <input type="number" placeholder="Numero de items" id="nItems">
+    <button onclick="pintarItems()">Ejecutar</button>
+    <p id="demo"></p>
+    <script>
+        function pintarItems(){
+            var ni = parseInt(document.getElementById("nItems").value);
+            console.log(ni);
+            var text = "<ul>";
+            
+            if((typeof(ni) == "undefined") || isNaN(ni)){
+                ni = 10;
+            }
+
+            for(i = 1; i <= ni; i++){
+                text += "<li>Elemento " + i + "</li>";
+            }
+
+            text += "</ul>";
+
+            document.getElementById("demo").innerHTML = text;
+        }
+    </script>
+</body>
+</html>

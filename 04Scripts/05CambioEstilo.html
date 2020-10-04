@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de Estilo</title>
+</head>
+<body>
+    <p id="demo">Hola Mundo !!!</p>
+    Elige un color: <input type="color" id="color"><br>
+    <label for="fuente">Elige una fuente:</label>
+    <select name="fuente" id="fuente" onchange="myFunction()">
+        <option value="Arial">Arial</option>
+        <option value="Times">Times</option>
+        <option value="sans-serif">Sans-serif</option>
+        <option value="Helvetica">Helvetica</option>
+        <option value="Courier">Courier</option>
+        <option value="monospace">Monospace</option>
+    </select>
+    <br>
+    <label for="tamanio">Tamaño de letra entre 10 y 150 px</label>
+    <input type="range" id="tamanio" name="tamanio" min="10" max="150">
+    <br>
+    <input type="button" value="Cambiar Estilo" onclick="myFunction()">
+    <p id="demo2" onmouseover="mouseOn(this);" onmouseout="mouseOut(this);">Hola Mundo !!!</p>
+    <script>
+        function myFunction(){
+            var color = document.getElementById("color").value;
+            var fuente = document.getElementById("fuente");
+            var fuente_valor = fuente.options[fuente.selectedIndex].value;
+            var fuente_nombre = fuente.options[fuente.selectedIndex].text;
+            console.log(color);
+            console.log(fuente_valor);
+            document.getElementById("demo2").style.color = color;
+            document.getElementById("demo2").style.fontFamily = fuente_valor;
+            //document.getElementById("demo2").style.fontSize = "larger";
+            document.getElementById("demo").innerHTML = "Fuente usada: " + fuente_nombre;
+        }
+
+        var slider = document.getElementById("tamanio");
+        slider.oninput = function(){
+            document.getElementById("demo2").style.fontSize = this.value + "px";
+        }
+
+        function mouseOn(o){
+            o.innerHTML =  " Mouse SOBRE el elemento";
+        }
+        function mouseOut(o){
+            o.innerHTML = " Mouse FUERA del elemento";
+        }
+    </script>
+
+</body>
+</html>
